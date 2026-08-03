@@ -1,0 +1,41 @@
+name: porter_admin_app
+description: Porter Admin App - Logistics Management Portal
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.1
+  http: ^1.1.0
+  flutter_secure_storage: ^9.0.0
+  firebase_core: ^3.3.0
+  firebase_messaging: ^15.0.0
+  intl: ^0.19.0
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+  lottie: ^3.0.0
+  connectivity_plus: ^6.0.0
+  image_picker: ^1.0.4
+  permission_handler: ^11.3.1
+  web_socket_channel: ^3.0.0
+  flutter_dotenv: ^5.1.0
+  uuid: ^4.0.0
+  data_table_2: ^2.5.15
+  pdf: ^3.10.0
+  csv: ^6.0.0
+  shared_preferences: ^2.2.0
+  fl_chart: ^0.68.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env

@@ -1,0 +1,88 @@
+server:
+  port: ${SERVER_PORT:8081}
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: porter-backend
+
+  # Multipart file upload configuration
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 15MB
+      enabled: true
+
+  # PostgreSQL — override with env vars for cloud
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://127.0.0.1:5432/porter_db}
+    username: ${DATABASE_USER:animeuser}
+    password: ${DATABASE_PASSWORD:animepass}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  # Redis — override with env vars for cloud native Redis
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 5000
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET:porter-secret-key-change-in-production-min-256-bit-key-required-here}
+  expiration: ${JWT_EXPIRATION:86400000}
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+
+# Firebase FCM
+firebase:
+  credentials-path: ${FIREBASE_CREDENTIALS:firebase-key.json}
+  config:
+    file: classpath:firebase-key.json
+
+# Google Maps
+google:
+  maps:
+    api-key: ${GOOGLE_MAPS_API_KEY:}
+
+# Porter Business Config
+porter:
+  matching:
+    search-radius-km: ${MATCHING_RADIUS_KM:5.0}
+    timeout-seconds: 30
+    max-retries: 3
+  fare:
+    base-fare: ${FARE_BASE:50.0}
+    per-km-rate: ${FARE_PER_KM:12.0}
+    per-min-rate: ${FARE_PER_MIN:2.0}
+  commission:
+    platform-percentage: ${COMMISSION_PERCENT:20.0}
+  # Local Storage Config for KYC & Driver Images
+  storage:
+    base-path: ${STORAGE_BASE_PATH:C:/Users/saipr/Desktop/New folder (7)}
+    driver-images-path: ${STORAGE_DRIVER_IMAGES:C:/Users/saipr/Desktop/New folder (7)/drivers}
+    kyc-documents-path: ${STORAGE_KYC_DOCUMENTS:C:/Users/saipr/Desktop/New folder (7)/kyc-documents}
+    max-file-size: ${STORAGE_MAX_FILE_SIZE:5242880}
+    allowed-file-types: ${STORAGE_ALLOWED_TYPES:jpg,jpeg,png,pdf}
+
+# Razorpay Payment Gateway
+razorpay:
+  key-id: ${RAZORPAY_KEY_ID:}
+  key-secret: ${RAZORPAY_KEY_SECRET:}
+
+# Auth Rate Limiting
+auth:
+  rate-limit:
+    otp-send-max-per-15min: 3
+    otp-verify-max-per-otp: 3
+    account-lockout-threshold: 5
+    account-lockout-duration-min: 30
