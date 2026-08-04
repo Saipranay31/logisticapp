@@ -2,10 +2,6 @@
 
 **Feature Documentation**
 
-- **Platform:** Android / iOS (Flutter)
-- **Version:** 1.0
-- **Last Updated:** April 2026
-
 ---
 
 ## Table of Contents
