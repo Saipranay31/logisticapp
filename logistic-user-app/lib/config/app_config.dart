@@ -6,11 +6,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 class AppConfig {
   // ── API ───────────────────────────────────────────────────────────────────
   static String get baseUrl =>
-      dotenv.env['BASE_URL'] ?? 'https://lou-tremendous-night-century.trycloudflare.com/api';
+      dotenv.env['BASE_URL'] ?? 'http://10.0.2.2:8081/api';
 
   static String get fileServerUrl =>
       dotenv.env['FILE_SERVER_URL'] ?? dotenv.env['BASE_URL']
-        ?.replaceFirst(RegExp(r'/api$'), '') ?? 'https://lou-tremendous-night-century.trycloudflare.com:8081';
+        ?.replaceFirst(RegExp(r'/api$'), '') ?? 'http://10.0.2.2:8081';
 
   /// WebSocket URL derived from baseUrl automatically.
   /// https://host/api → wss://host/ws

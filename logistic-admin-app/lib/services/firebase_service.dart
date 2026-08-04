@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'dart:async';
+import '../config/app_config.dart';
 
 /// Firebase Notification Service
 /// Handles FCM initialization, token registration, and notification handling
@@ -23,11 +24,11 @@ class FirebaseNotificationService {
   static Future<void> initializeFirebase() async {
     try {
       await Firebase.initializeApp(
-        options: const FirebaseOptions(
-          apiKey: 'AIzaSyDummyKey', // Replace with actual key from google-services.json
+        options: FirebaseOptions(
+          apiKey: AppConfig.firebaseApiKey.isNotEmpty ? AppConfig.firebaseApiKey : 'AIzaSyDummyKey', // Loaded from .env
           appId: '1:1234567890:android:dummyappid',
           messagingSenderId: '1234567890',
-          projectId: 'porter-project',
+          projectId: AppConfig.firebaseProjectId,
         ),
       );
       print('Firebase initialized successfully');

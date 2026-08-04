@@ -16,8 +16,8 @@ spring:
   # PostgreSQL — override with env vars for cloud
   datasource:
     url: ${DATABASE_URL:jdbc:postgresql://127.0.0.1:5432/porter_db}
-    username: ${DATABASE_USER:animeuser}
-    password: ${DATABASE_PASSWORD:animepass}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -39,7 +39,7 @@ spring:
 
 # JWT Configuration
 jwt:
-  secret: ${JWT_SECRET:porter-secret-key-change-in-production-min-256-bit-key-required-here}
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:86400000}
   refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
 

@@ -5,7 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 class AppConfig {
   // ── API ───────────────────────────────────────────────────────────────────
   static String get baseUrl =>
-      dotenv.env['BASE_URL'] ?? 'https://lou-tremendous-night-century.trycloudflare.com/api';
+      dotenv.env['BASE_URL'] ?? 'http://10.0.2.2:8081/api';
 
   /// WebSocket URL derived from baseUrl automatically.
   /// https://host/api → wss://host/ws
