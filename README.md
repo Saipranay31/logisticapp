@@ -637,10 +637,10 @@ The Admin Dashboard provides centralized control over users, drivers, deliveries
 │   ├── DRIVER_APP_FEATURES.md
 │   └── ADMIN_APP_FEATURES.md
 │
-├── porter-admin-app/
+├── logistic-admin-app/
 ├── porter-backend/
-├── porter-driver-app/
-├── porter-user-app/
+├── logistic-driver-app/
+├── logistic-user-app/
 │
 ├── screenshots/
 │   ├── user/
