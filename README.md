@@ -226,32 +226,48 @@ This approach keeps the codebase maintainable, scalable, and easier to evolve in
 ```
 
 ---
-
 # 🏛 Backend Architecture
 
-The backend is built using **Spring Boot** and follows a layered architecture that separates responsibilities into controllers, services, repositories, entities, DTOs, security, and configuration.
+The backend is built using **Spring Boot** and follows a **Modular Monolith Architecture**. Each business domain is organized into an independent module while sharing a single application and database.
 
+Each module internally follows a **Layered Architecture**, separating responsibilities into Controllers, Services, Repositories, Entities, DTOs, Security, and Configuration components. This approach improves maintainability, scalability, and code organization while allowing future migration to microservices if needed.
+
+## High-Level Architecture
+
+```text
+                 Spring Boot Backend
+                         │
+ ┌──────────┬──────────┬──────────┬──────────┐
+ │          │          │          │          │
+Auth      User      Driver      Ride     Payment
+ │          │          │          │          │
+Location  Notification      Admin
+                         │
+                  PostgreSQL Database
 ```
+
+## Layered Architecture (Inside Each Module)
+
+```text
 Controller
      │
      ▼
-Service Layer
+Service
      │
      ▼
-Repository Layer
+Repository
      │
      ▼
 PostgreSQL Database
 ```
 
-This architecture improves:
+### Benefits
 
-- Code Maintainability
-- Testability
-- Separation of Concerns
-- Scalability
-- Reusability
-
+- Modular and maintainable codebase
+- Clear separation of concerns
+- Reusable business logic
+- Easier testing and debugging
+- Scalable architecture for future enhancements
 ---
 
 # 🧩 Backend Modules
