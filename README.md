@@ -987,7 +987,7 @@ https://github.com/Saipranay31
 LinkedIn
 
 ```
-https://linkedin.com/in/https://www.linkedin.com/in/saipranay-thadakamalla
+https://www.linkedin.com/in/saipranay-thadakamalla
 ```
 
 Email
