@@ -981,19 +981,19 @@ Java Full Stack Developer | Backend Engineer
 GitHub
 
 ```
-https://github.com/YOUR_USERNAME
+https://github.com/Saipranay31
 ```
 
 LinkedIn
 
 ```
-https://linkedin.com/in/YOUR_LINKEDIN_PROFILE
+https://linkedin.com/in/https://www.linkedin.com/in/saipranay-thadakamalla
 ```
 
 Email
 
 ```
-YOUR_EMAIL@gmail.com
+saipranayt314@gmail.com
 ```
 
 ---
